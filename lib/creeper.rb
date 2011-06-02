@@ -20,7 +20,7 @@ class Creepy
     HTTParty.get @FRIENDS + find_by(options)
   end
   def tweets(options = {})
-    HTTParty.get @TWEETS + find_by(options) + "&trim_user=1"
+    HTTParty.get @TWEETS + find_by(options) + "&trim_user=1" + "&count=200"
   end
   
   protected
@@ -49,3 +49,8 @@ end
 #pp Creepy.new.friends("zachaysan")
 #pp Creepy.new.followers("zachaysan")
 pp Creepy.new.tweets(:screen_name => "zachaysan")
+#a = JSON.parse(resp)
+#pp a.size
+#pp a[0]
+
+#pp h.class
